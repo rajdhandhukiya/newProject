@@ -30,6 +30,12 @@ function NavbarCommponent() {
                 <Nav.Link>
                   <Link to="/Comment">Comment</Link>
                 </Nav.Link>
+                <Nav.Link>
+                  <Link to="/Comments">Comments</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/message">message</Link>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>
