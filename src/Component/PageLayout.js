@@ -18,13 +18,19 @@ function PageLayout() {
           style={{
             alignItems: "self-end",
             borderBottom: "1px solid #e7e7e7",
-            paddingBottom: "17px",
           }}
         >
-          <div className="col xl={6}">
+          <div className="col-xxl-6 col-lg-6 col-md-8">
             <h1>Tesla-Xpod Franchise</h1>
           </div>
-          <div className="col xl={6}" style={{ display: "contents" }}>
+          <div
+            className="col-xxl-6 col-lg-6 col-md-4"
+            style={{
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
+            }}
+          >
             <img src={message2} alt="message" style={{ width: "35px" }} />
             <img
               src={notification}
@@ -37,8 +43,11 @@ function PageLayout() {
         </div>
         <div className="row px-1 ">
           <div
-            className="col-xxl-9"
-            style={{ display: "flex", borderBottom: "1px solid #d8d8d8" }}
+            className="col-xxl-9 col-lg-10 "
+            style={{
+              display: "flex",
+              borderBottom: "1px solid #d8d8d8",
+            }}
           >
             <div className="france-name">
               <p>franchisee Id</p>
@@ -66,7 +75,14 @@ function PageLayout() {
             </div>
           </div>
 
-          <div className="col-xxl-3">
+          <div
+            className="col-xxl-3 col-lg-2 "
+            style={{
+              display: "flex",
+              alignItems: "center",
+              borderBottom: "1px solid #d8d8d8",
+            }}
+          >
             <Button
               variant="outline-dark"
               style={{
@@ -78,126 +94,131 @@ function PageLayout() {
               <b>cancel</b>
             </Button>
             <button
+              className="clicker"
               style={{
                 margin: "11px 0px 10px 23px",
-                padding: "5px 90px 5px 90px",
+                padding: "5px 0px 5px 0px",
                 backgroundColor: "#b6cb1c",
                 borderWidth: "0px",
                 borderRadius: "5px",
                 color: "white",
+                width: "100%",
               }}
             >
               <b>save</b>
             </button>
           </div>
         </div>
-
-        <div
-          style={{
-            border: "1px solid black",
-            margin: "40px -11px 0px -16px",
-            borderRadius: "6px",
-            borderColor: "#d8d8d8",
-            paddingBottom: "25px",
-            paddingLeft: "25px",
-          }}
-        >
-          <h5 style={{ padding: "35px 0px 0px 40px" }}>
-            <b>Display Franchise Information :</b>
-          </h5>
-          <div style={{ display: "flex" }}>
-            <div className="data-list">
-              <p>franchisee ID</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>First Name</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>Last Name</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>Gender</p>
-              <h6>
-                <select
-                  style={{
-                    padding: "12px 20px",
-                    backgroundColor: "#f4f4f4",
-                    borderWidth: "0px",
-                  }}
-                >
-                  <option>male</option>
-                  <option>female</option>
-                </select>
-              </h6>
-            </div>
-          </div>
-          <div style={{ display: "flex" }}>
-            <div className="data-list">
-              <p>franchisee company name</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>email address</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>mobile</p>
-              <input type="text" name="franchisee_Id" />
-            </div>
-            <div className="data-list">
-              <p>DOB (optional)</p>
-              <div style={{ display: "flex" }}>
-                <div className="lister">
+        <div className="row">
+          <div
+            className="col-xxl-12 col-lg-12"
+            style={{
+              border: "1px solid #d8d8d8",
+              padding: "30px",
+              marginTop: "25px",
+              borderRadius: "6px",
+            }}
+          >
+            <h5 style={{}}>
+              <b>Display Franchise Information :</b>
+            </h5>
+            <div style={{ display: "flex" }}>
+              <div className="data-list">
+                <p>franchisee ID</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-list">
+                <p>First Name</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-list">
+                <p>Last Name</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-option">
+                <p>Gender</p>
+                <h6>
                   <select
                     style={{
-                      padding: "10px 5px",
                       backgroundColor: "#f4f4f4",
                       borderWidth: "0px",
-                      borderRadius: "5px",
+                      borderRadius: "4px",
+                      marginTop: "10px",
                     }}
                   >
-                    <option>00</option>
+                    <option>male</option>
+                    <option>female</option>
                   </select>
-                </div>
-                <div className="lister">
-                  <select
-                    style={{
-                      padding: "10px 5px",
-                      backgroundColor: "#f4f4f4",
-                      borderWidth: "0px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <option>01</option>
-                  </select>
-                </div>
-                <div className="lister">
-                  <select
-                    style={{
-                      padding: "10px 5px",
-                      backgroundColor: "#f4f4f4",
-                      borderWidth: "0px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <option>2001</option>
-                  </select>
+                </h6>
+              </div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div className="data-list">
+                <p>franchisee company name</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-list">
+                <p>email address</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-list">
+                <p>mobile</p>
+                <input type="text" name="franchisee_Id" />
+              </div>
+              <div className="data-list">
+                <p>DOB (optional)</p>
+                <div style={{ display: "flex" }}>
+                  <div className="lister">
+                    <select
+                      style={{
+                        padding: "10px 15px",
+                        backgroundColor: "#f4f4f4",
+                        borderWidth: "0px",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      <option>00</option>
+                    </select>
+                  </div>
+                  <div className="lister">
+                    <select
+                      style={{
+                        padding: "10px 15px",
+                        backgroundColor: "#f4f4f4",
+                        borderWidth: "0px",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      <option>01</option>
+                    </select>
+                  </div>
+                  <div className="lister">
+                    <select
+                      style={{
+                        padding: "10px 15px",
+                        backgroundColor: "#f4f4f4",
+                        borderWidth: "0px",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      <option>2001</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          style={{
-            border: "1px solid #d8d8d8",
-            margin: "40px -11px 0px -16px",
-            borderRadius: "5px",
-          }}
-        >
-          <div>
+        <div className="row">
+          <div
+            className="col-xxl-12 col-lg-12"
+            style={{
+              border: "1px solid #d8d8d8",
+              padding: "30px",
+              borderRadius: "5px",
+              marginTop: "25px",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -205,17 +226,18 @@ function PageLayout() {
                 justifyContent: "space-between",
               }}
             >
-              <h4 style={{ padding: "40px 0px 8px 50px" }}>
-                <b>Display List of Gym franchised :</b>
-              </h4>
+              <h5>
+                <b>Display List of Gym franchised</b>
+              </h5>
               <div>
-                <Button variant="dark" style={{ marginRight: "45px" }}>
+                <Button
+                  variant="dark"
+                  style={{ marginRight: "35px", width: "120px" }}
+                >
                   <b>Add Gym</b>
                 </Button>
               </div>
             </div>
-          </div>
-          <div>
             <table>
               <thead>
                 <tr>
@@ -228,75 +250,83 @@ function PageLayout() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="col xl={2}">
+                  <td>
                     <input
+                      className="table-data"
                       type="text"
-                      name="Gym_data"
-                      // name={"Gym"}
-                      // value={Gym}
+                      name="franchisee_Id"
                     />
                   </td>
-                  <td className="col xl={2}">
+                  <td>
                     <input
+                      className="table-data"
                       type="text"
-                      name="Gym_data"
-                      // name={"Address"}
-                      // value={Address}
+                      name="franchisee_Id"
                     />
                   </td>
-                  <td className="col xl={2} ">
+                  <td>
                     <input
+                      className="table-data"
                       type="text"
-                      name="Gym_data"
-                      // name={"GoogleMap"}
-                      // value={GoogleMap}
+                      name="franchisee_Id"
                     />
                   </td>
-                  <td className="col xl={2}">
-                    <input type="date" name="Gym_data" />
+                  <td className="sizes">
+                    <input
+                      className="table-data"
+                      type="date"
+                      name="franchisee_Id"
+                    />
                   </td>
-                  <td className="col xl={2}">
-                    <input type="date" name="Gym_data" />
+                  <td className="sizes">
+                    <input
+                      className="table-data"
+                      type="date"
+                      name="franchisee_Id"
+                    />
                   </td>
-                  <td className="col xl={2}">
+                  <td>
                     <img
                       src={Removal}
                       alt="delete"
-                      style={{
-                        width: "30px",
-                      }}
+                      style={{ width: "30px" }}
                       // onClick={() => handleRemove()}
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                paddingRight: "40px",
-                paddingBottom: "20px",
-              }}
-            >
-              <div>
-                <Button variant="outline-dark" style={{ margin: "0 10px 0 0" }}>
-                  cancel
-                </Button>
-              </div>
-              <div>
-                <button
-                  style={{
-                    backgroundColor: "#b6cb1c",
-                    borderWidth: "0px",
-                    borderRadius: "5px",
-                    color: "white",
-                    width: "75px",
-                    height: "35px",
-                  }}
-                >
-                  save
-                </button>
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  marginTop: "15px",
+                  marginRight: "35px",
+                }}
+              >
+                <div>
+                  <Button
+                    variant="outline-dark"
+                    style={{ marginRight: "10px" }}
+                  >
+                    <b>cancel</b>
+                  </Button>
+                </div>
+                <div>
+                  <button
+                    style={{
+                      backgroundColor: "#b6cb1c",
+                      borderWidth: "0px",
+                      borderRadius: "5px",
+                      color: "white",
+                      width: "85px",
+                      height: "37px",
+                    }}
+                  >
+                    <b>save</b>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
