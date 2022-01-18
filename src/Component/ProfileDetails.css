@@ -1,0 +1,47 @@
+.france-name {
+  margin: 0 94px 0 0px;
+}
+.france-name::first-child {
+  margin: 0;
+}
+.france-name p {
+  font-size: 14px;
+  color: #838383;
+}
+.fsizer {
+  font-size: 14px;
+}
+.wellback p {
+  font-size: 14px;
+}
+#franchisee_Id2 {
+  padding: 3px 8px 3px 8px;
+  width: 95%;
+}
+
+.profile-list p {
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #c2c2c2;
+}
+tr {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+td {
+  font-size: 14px;
+}
+
+th {
+  color: #d8d8d8;
+}
+
+@media (max-width: 1440px) {
+  .Debit {
+    margin-left: 10px;
+  }
+  .BanUser {
+    margin-left: 30px;
+  }
+}

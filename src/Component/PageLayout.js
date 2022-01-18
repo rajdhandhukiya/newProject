@@ -10,6 +10,9 @@ import "../Component/pageLayout.css";
 // import { Dropdown } from "bootstrap";
 
 function PageLayout() {
+  const handleclick = () => {
+    console.log("clicked");
+  };
   return (
     <>
       <div className="container">
@@ -20,11 +23,11 @@ function PageLayout() {
             borderBottom: "1px solid #e7e7e7",
           }}
         >
-          <div className="col-xxl-6 col-lg-6 col-md-8">
+          <div className="col-xxl-6">
             <h1>Tesla-Xpod Franchise</h1>
           </div>
           <div
-            className="col-xxl-6 col-lg-6 col-md-4"
+            className="col-xxl-6 "
             style={{
               display: "flex",
               justifyContent: "end",
@@ -43,7 +46,7 @@ function PageLayout() {
         </div>
         <div className="row px-1 ">
           <div
-            className="col-xxl-9 col-lg-10 "
+            className="col-xxl-9"
             style={{
               display: "flex",
               borderBottom: "1px solid #d8d8d8",
@@ -76,7 +79,7 @@ function PageLayout() {
           </div>
 
           <div
-            className="col-xxl-3 col-lg-2 "
+            className="col-xxl-3"
             style={{
               display: "flex",
               alignItems: "center",
@@ -94,7 +97,9 @@ function PageLayout() {
               <b>cancel</b>
             </Button>
             <button
-              className="clicker"
+              onClick={() => {
+                handleclick();
+              }}
               style={{
                 margin: "11px 0px 10px 23px",
                 padding: "5px 0px 5px 0px",
@@ -111,7 +116,7 @@ function PageLayout() {
         </div>
         <div className="row">
           <div
-            className="col-xxl-12 col-lg-12"
+            className="col-xxl-12"
             style={{
               border: "1px solid #d8d8d8",
               padding: "30px",
@@ -122,87 +127,90 @@ function PageLayout() {
             <h5 style={{}}>
               <b>Display Franchise Information :</b>
             </h5>
-            <div style={{ display: "flex" }}>
-              <div className="data-list">
-                <p>franchisee ID</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-list">
-                <p>First Name</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-list">
-                <p>Last Name</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-option">
-                <p>Gender</p>
-                <h6>
-                  <select
-                    style={{
-                      backgroundColor: "#f4f4f4",
-                      borderWidth: "0px",
-                      borderRadius: "4px",
-                      marginTop: "10px",
-                    }}
-                  >
-                    <option>male</option>
-                    <option>female</option>
-                  </select>
-                </h6>
-              </div>
-            </div>
-            <div style={{ display: "flex" }}>
-              <div className="data-list">
-                <p>franchisee company name</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-list">
-                <p>email address</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-list">
-                <p>mobile</p>
-                <input type="text" name="franchisee_Id" />
-              </div>
-              <div className="data-list">
-                <p>DOB (optional)</p>
-                <div style={{ display: "flex" }}>
-                  <div className="lister">
+            <div className="row">
+              <div style={{ display: "flex" }}>
+                <div className="data-list">
+                  <p>franchisee ID</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-list">
+                  <p>First Name</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-list">
+                  <p>Last Name</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-option">
+                  <p>Gender</p>
+                  <h6>
                     <select
                       style={{
-                        padding: "10px 15px",
                         backgroundColor: "#f4f4f4",
                         borderWidth: "0px",
-                        borderRadius: "5px",
+                        borderRadius: "4px",
+                        marginTop: "10px",
                       }}
                     >
-                      <option>00</option>
+                      <option>male</option>
+                      <option>female</option>
                     </select>
-                  </div>
-                  <div className="lister">
-                    <select
-                      style={{
-                        padding: "10px 15px",
-                        backgroundColor: "#f4f4f4",
-                        borderWidth: "0px",
-                        borderRadius: "5px",
-                      }}
-                    >
-                      <option>01</option>
-                    </select>
-                  </div>
-                  <div className="lister">
-                    <select
-                      style={{
-                        padding: "10px 15px",
-                        backgroundColor: "#f4f4f4",
-                        borderWidth: "0px",
-                        borderRadius: "5px",
-                      }}
-                    >
-                      <option>2001</option>
-                    </select>
+                  </h6>
+                </div>
+              </div>
+
+              <div style={{ display: "flex" }}>
+                <div className="data-list">
+                  <p>franchisee company name</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-list">
+                  <p>email address</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-list">
+                  <p>mobile</p>
+                  <input type="text" name="franchisee_Id" />
+                </div>
+                <div className="data-list">
+                  <p>DOB (optional)</p>
+                  <div style={{ display: "flex" }}>
+                    <div className="lister">
+                      <select
+                        style={{
+                          padding: "10px 15px",
+                          backgroundColor: "#f4f4f4",
+                          borderWidth: "0px",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <option>00</option>
+                      </select>
+                    </div>
+                    <div className="lister">
+                      <select
+                        style={{
+                          padding: "10px 15px",
+                          backgroundColor: "#f4f4f4",
+                          borderWidth: "0px",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <option>01</option>
+                      </select>
+                    </div>
+                    <div className="lister">
+                      <select
+                        style={{
+                          padding: "10px 15px",
+                          backgroundColor: "#f4f4f4",
+                          borderWidth: "0px",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <option>2001</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -211,7 +219,7 @@ function PageLayout() {
         </div>
         <div className="row">
           <div
-            className="col-xxl-12 col-lg-12"
+            className="col-xxl-12 "
             style={{
               border: "1px solid #d8d8d8",
               padding: "30px",

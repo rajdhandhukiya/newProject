@@ -4,8 +4,11 @@ import Forms from "./Component/formComponent";
 import NavbarCommponent from "./Component/NavbarCommponent";
 import DynamicTable from "./Component/DynamicTable";
 import Comment from "./Component/Comment";
+import ProfileDetails from "./Component/ProfileDetails";
 // import Comments from "./Component/Comments";
 import PageLayout from "./Component/PageLayout";
+import LogIn from "./Component/LogIn";
+import Finance from "./Component/Finance";
 import "./App.css";
 
 function App() {
@@ -37,6 +40,21 @@ function App() {
         <Switch>
           <Route path="/message">
             <PageLayout />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/ProfileDetails">
+            <ProfileDetails />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/Login">
+            <LogIn />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/Finance">
+            <Finance />
           </Route>
         </Switch>
         {/* <Switch>

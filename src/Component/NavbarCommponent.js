@@ -36,6 +36,15 @@ function NavbarCommponent() {
                 <Nav.Link>
                   <Link to="/message">message</Link>
                 </Nav.Link>
+                <Nav.Link>
+                  <Link to="/ProfileDetails">ProfileDetails</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/LogIn">LogIn</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/Finance">Finance</Link>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>
