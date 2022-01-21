@@ -42,7 +42,7 @@ function Finance() {
           </div>
         </div>
         <div className="row" style={{ marginTop: "10px" }}>
-          <div className="col-xxl-4 ">
+          <div className="col-xxl-4 col-lg-4">
             <div
               style={{
                 border: "1px solid #d8d8d8",
@@ -55,11 +55,11 @@ function Finance() {
                 className="row"
                 style={{ borderBottom: "1px solid #d8d8d8" }}
               >
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <img src={growth} style={{ width: "50px" }} />
                   <p>EARNINGS</p>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p
                     style={{ display: "flex", justifyContent: "space-around" }}
                   >
@@ -77,7 +77,7 @@ function Finance() {
                     </b>
                   </p>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p>DAILY EARNINGS</p>
                   <h3 style={{ color: "#b6cb1c" }}>
                     <b>$6.543</b>
@@ -85,7 +85,7 @@ function Finance() {
                 </div>
               </div>
               <div className="row" style={{ marginTop: "15px" }}>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <select
                     style={{
                       backgroundColor: "#f4f4f4",
@@ -98,7 +98,7 @@ function Finance() {
                     <option>1 Week</option>
                   </select>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p
                     style={{ display: "flex", justifyContent: "space-around" }}
                   >
@@ -116,7 +116,7 @@ function Finance() {
                     </b>
                   </p>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p>LAST 30 DAYS</p>
                   <h3>
                     <b>$ 540</b>
@@ -126,7 +126,7 @@ function Finance() {
             </div>
           </div>
 
-          <div className="col-xxl-4">
+          <div className="col-xxl-4 col-lg-4">
             <div
               style={{
                 border: "1px solid #d8d8d8",
@@ -139,11 +139,11 @@ function Finance() {
                 className="row"
                 style={{ borderBottom: "1px solid #d8d8d8" }}
               >
-                <div className="col-xxl-8">
+                <div className="col-xxl-8 col-lg-8">
                   <img src={wallet} alt="wallet" style={{ width: "50px" }} />
                   <p>WALLET BALANCE</p>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p>TOTAL DEPOSIT</p>
                   <h3 style={{ color: "#b6cb1c" }}>$8.902</h3>
                 </div>
@@ -164,7 +164,7 @@ function Finance() {
             </div>
           </div>
 
-          <div className="col-xxl-4">
+          <div className="col-xxl-4 col-lg-4">
             <div
               style={{
                 border: "1px solid #d8d8d8",
@@ -177,11 +177,11 @@ function Finance() {
                 className="row"
                 style={{ borderBottom: "1px solid #d8d8d8" }}
               >
-                <div className="col-xxl-8">
+                <div className="col-xxl-8 col-lg-8">
                   <img src={group} alt="group" style={{ width: "50px" }} />
                   <p>TOTAL GROUP'S FEE EARNED</p>
                 </div>
-                <div className="col-xxl-4">
+                <div className="col-xxl-4 col-lg-4">
                   <p>DAILY EARNINGS</p>
                   <h3 style={{ color: "#b6cb1c" }}>$5.200</h3>
                 </div>
@@ -190,7 +190,7 @@ function Finance() {
                 className="row"
                 style={{ marginTop: "15px", padding: "10px" }}
               >
-                <div className="col-xxl-6">
+                <div className="col-xxl-6 col-lg-6">
                   <select
                     style={{
                       backgroundColor: "#f4f4f4",
@@ -203,7 +203,7 @@ function Finance() {
                     <option>1 Week</option>
                   </select>
                 </div>
-                <div className="col-xxl-6">
+                <div className="col-xxl-6 col-lg-6">
                   <div style={{ display: "flex", justifyContent: "end" }}>
                     <div>
                       <p>LAST 30 DAYS</p>
@@ -224,13 +224,14 @@ function Finance() {
             marginTop: "35px",
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <div className="col-xxl-2">
             <div>ALL TRANSACTIONS</div>
           </div>
           <div className="col-xxl-8">
-            <div style={{ display: "flex", justifyContent: "space-arround" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <input type="text" placeholder="Search Notifications" />
               </div>

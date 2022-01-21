@@ -9,6 +9,9 @@ import ProfileDetails from "./Component/ProfileDetails";
 import PageLayout from "./Component/PageLayout";
 import LogIn from "./Component/LogIn";
 import Finance from "./Component/Finance";
+import Franchise from "./Component/Franchise";
+import Cctv from "./Component/Cctv";
+import UserListing from "./Component/UserListing";
 import "./App.css";
 
 function App() {
@@ -55,6 +58,21 @@ function App() {
         <Switch>
           <Route path="/Finance">
             <Finance />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/Franchise">
+            <Franchise />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/Cctv">
+            <Cctv />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/UserListing">
+            <UserListing />
           </Route>
         </Switch>
         {/* <Switch>

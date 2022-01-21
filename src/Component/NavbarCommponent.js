@@ -45,6 +45,15 @@ function NavbarCommponent() {
                 <Nav.Link>
                   <Link to="/Finance">Finance</Link>
                 </Nav.Link>
+                <Nav.Link>
+                  <Link to="/Franchise">Franchise</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/Cctv">Cctv</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/UserListing">UserListing</Link>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>
