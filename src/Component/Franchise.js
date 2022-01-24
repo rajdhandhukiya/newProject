@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile from "../Image/profile.svg";
 import message2 from "../Image/message.png";
 import notification from "../Image/notification.svg";
 import Edit from "../Image/Edit.svg";
 import { Button, Pagination, Table } from "react-bootstrap";
 import removal2 from "../Image/removal2.svg";
+import { useDispatch, useSelector } from "react-redux";
+import CounterSplice, { counterSlice, increment } from "../CounterSplice";
+import axios from "axios";
 
 function Franchise() {
+  const dispatch = useDispatch();
+  const FranchiseTable = useSelector((state) => state.counter.tableData);
+  const [data, setData] = useState();
+  console.log("ffff", FranchiseTable);
+
   let active = 2;
   let items = [];
   for (let number = 1; number <= 15; number++) {
@@ -16,6 +24,23 @@ function Franchise() {
       </Pagination.Item>
     );
   }
+  useEffect(() => {
+    // const { data } = await axios.get(
+    //   "https://jsonplaceholder.typicode.com/todos"
+    // );
+    // console.log("datatata", data);
+    dispatch(increment());
+  }, []);
+
+  // const FranchiseData = [
+  //   {
+  //     userId: "1",
+  //     id: "1",
+  //     title: "sunt",
+  //     body: "quira",
+  //   },
+  // ];
+
   return (
     <div>
       <>
@@ -110,876 +135,57 @@ function Franchise() {
               <tr>
                 <th>Franchise Id</th>
                 <th>Franchise Name</th>
-                <th>Company Name</th>
+                <th>company Name</th>
                 <th>Gym Name</th>
-                <th>Franchise Start Date</th>
-                <th>franchise End Date</th>
+                <th>Start Date</th>
+                <th>End Date</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
+              {FranchiseTable.map((item, index) => {
+                console.log("=============>", item);
+                return (
+                  <tr>
+                    <td>{item.userId}</td>
+                    <td>{item.id}</td>
+                    <td>{item.title}</td>
+                    <td>{item.body}</td>
+                    <td>{item.StartDate}</td>
+                    <td>{item.EndDate}</td>
+                    <td>
+                      <button
+                        style={{
+                          borderWidth: "0px",
+                          backgroundColor: "#d4d4d4",
+                          borderRadius: "50%",
+                          padding: "6px",
+                          width: "35px ",
+                        }}
+                      >
+                        <img src={Edit} alt="edit" style={{ width: "10px" }} />
+                      </button>
+                      {/* </td>
                 <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="remov" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="eddit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="remov" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>000334425</td>
-                <td>Tesla X-pod Franchise</td>
-                <td>Tesla Company</td>
-                <td>131 jalan Bukit Merah</td>
-                <td>04.23.2021</td>
-                <td>04.23.2025</td>
-                <td>
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                    }}
-                  >
-                    <img src={Edit} style={{ width: "10px" }} />
-                  </button>
-                  {/* </td>
-                <td> */}
-                  <button
-                    style={{
-                      borderWidth: "0px",
-                      backgroundColor: "#d4d4d4",
-                      borderRadius: "50%",
-                      padding: "6px",
-                      width: "35px ",
-                      marginLeft: "5px",
-                    }}
-                  >
-                    <img src={removal2} alt="edit" style={{ width: "10px" }} />
-                  </button>
-                </td>
-              </tr>
+                      <button
+                        style={{
+                          borderWidth: "0px",
+                          backgroundColor: "#d4d4d4",
+                          borderRadius: "50%",
+                          padding: "6px",
+                          width: "35px ",
+                          marginLeft: "5px",
+                        }}
+                      >
+                        <img
+                          src={removal2}
+                          alt="edit"
+                          style={{ width: "10px" }}
+                        />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </Table>
           <div

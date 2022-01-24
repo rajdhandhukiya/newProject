@@ -9,10 +9,7 @@ function Comment() {
 
   const getTableComment = async () => {
     try {
-      const data = await axios.get(
-        "https://jsonplaceholder.typicode.com/comments",
-        "https://jsonplaceholder.typicode.com/comments?postId=1"
-      );
+      const data = await axios.get("https:jsonplaceholder.typicode.com/posts");
 
       console.log(data.data);
       setTableComment(data.data);
@@ -47,11 +44,11 @@ function Comment() {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>postId</th>
+            <th>albumId</th>
             <th>id</th>
-            <th>name</th>
-            <th>email</th>
-            <th>body</th>
+            <th>title</th>
+            <th>url</th>
+            <th>thumbnailUrl</th>
           </tr>
         </thead>
 
@@ -61,11 +58,11 @@ function Comment() {
             return (
               <tbody>
                 <tr>
-                  <td>{data.postId}</td>
+                  <td>{data.albumId}</td>
                   <td>{data.id}</td>
-                  <td>{data.name}</td>
-                  <td>{data.email}</td>
-                  <td>{data.body}</td>
+                  <td>{data.title}</td>
+                  <td>{data.url}</td>
+                  <td>{data.thumbnailUrl}</td>
                 </tr>
               </tbody>
             );
